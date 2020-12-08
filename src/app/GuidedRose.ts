@@ -3,7 +3,7 @@ import { Item } from "./Item";
 export class GildedRose {
     
     constructor(
-        private items: Item[] = []
+        private items: Item[]
     ) {}
 
     updateQuality() {

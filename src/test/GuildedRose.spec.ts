@@ -28,12 +28,20 @@ describe('Guilded Rose', function () {
         expect(items[0]).toEqual({name: "Any item", sellIn: 2, quality: 0});
     });
 
-    it('"Aged Brie" actually increases in Quality the older it gets', function() {
+    it('"Aged Brie" actually increases in quality the older it gets', function() {
         const gildedRose = new GildedRose([ new Item('Aged Brie', 3, 0) ]);
         
         const items = gildedRose.updateQuality();
         
         expect(items[0]).toEqual({name: "Aged Brie", sellIn: 2, quality: 1});
+    });
+
+    it('"Aged Brie" increases the quality twice as fast once the expiration date has passed', function() {
+        const gildedRose = new GildedRose([ new Item('Aged Brie', 0, 5) ]);
+        
+        const items = gildedRose.updateQuality();
+        
+        expect(items[0]).toEqual({name: "Aged Brie", sellIn: -1, quality: 7});
     });
 
     it('The Quality of an item is never more than 50', function() {
@@ -92,4 +100,13 @@ describe('Guilded Rose', function () {
         expect(items[0]).toEqual({name: "Sulfuras, Hand of Ragnaros", sellIn: 10, quality: 80});
     });
     
+    /*
+    it('"Conjured" items degrade in quality twice as fast as normal items', function() {
+        const gildedRose = new GildedRose([ new Item('Conjured', 5, 10) ]);
+        
+        const items = gildedRose.updateQuality();
+        
+        expect(items[0]).toEqual({name: "Conjured", sellIn: 4, quality: 8});
+    });
+    */
 });
