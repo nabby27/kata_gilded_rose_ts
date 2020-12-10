@@ -132,5 +132,21 @@ describe('Guilded Rose', function () {
         
         expect(items[0]).toEqual({name: "Conjured", sellIn: -1, quality: 6});
     });
+
+    it('"Conjured" items degrade in quality twice as fast as normal items but is never negative', function () {
+        const gildedRose = new GildedRose([new Item('Conjured Mana Cake', 5, 1)]);
+
+        const items = gildedRose.updateQuality();
+
+        expect(items[0]).toEqual({ name: "Conjured Mana Cake", sellIn: 4, quality: 0 });
+    });
+
+    it('"Conjured" items degrade in quality twice as fast as normal items when the expiration date has passed but is never negative', function () {
+        const gildedRose = new GildedRose([new Item('Conjured Mana Cake', 0, 1)]);
+
+        const items = gildedRose.updateQuality();
+
+        expect(items[0]).toEqual({ name: "Conjured Mana Cake", sellIn: -1, quality: 0 });
+    });
     */
 });
