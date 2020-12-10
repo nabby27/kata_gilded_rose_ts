@@ -2,7 +2,6 @@ import { CustomItem } from "./CustomItem";
 import { Item } from "../Item";
 
 export class ConjuredItem implements CustomItem {
-
     readonly maxQuality = 50;
 
     constructor(
