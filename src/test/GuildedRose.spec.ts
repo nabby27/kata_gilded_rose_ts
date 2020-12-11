@@ -117,23 +117,23 @@ describe('Guilded Rose', function () {
     });
 
     /*
-    it('"Conjured" items degrade in quality twice as fast as normal items', function() {
-        const gildedRose = new GildedRose([ new Item('Conjured', 5, 10) ]);
+    it('"Conjured Mana Cake" items degrade in quality twice as fast as normal items', function() {
+        const gildedRose = new GildedRose([ new Item('Conjured Mana Cake', 5, 10) ]);
         
         const items = gildedRose.updateQuality();
         
-        expect(items[0]).toEqual({name: "Conjured", sellIn: 4, quality: 8});
+        expect(items[0]).toEqual({name: "Conjured Mana Cake", sellIn: 4, quality: 8});
     });
 
-    it('"Conjured" items degrade in quality twice as fast as normal items when the expiration date has passed', function() {
-        const gildedRose = new GildedRose([ new Item('Conjured', 0, 10) ]);
+    it('"Conjured Mana Cake" items degrade in quality twice as fast as normal items when the expiration date has passed', function() {
+        const gildedRose = new GildedRose([ new Item('Conjured Mana Cake', 0, 10) ]);
         
         const items = gildedRose.updateQuality();
         
-        expect(items[0]).toEqual({name: "Conjured", sellIn: -1, quality: 6});
+        expect(items[0]).toEqual({name: "Conjured Mana Cake", sellIn: -1, quality: 6});
     });
 
-    it('"Conjured" items degrade in quality twice as fast as normal items but is never negative', function () {
+    it('"Conjured Mana Cake" items degrade in quality twice as fast as normal items but is never negative', function () {
         const gildedRose = new GildedRose([new Item('Conjured Mana Cake', 5, 1)]);
 
         const items = gildedRose.updateQuality();
@@ -141,7 +141,7 @@ describe('Guilded Rose', function () {
         expect(items[0]).toEqual({ name: "Conjured Mana Cake", sellIn: 4, quality: 0 });
     });
 
-    it('"Conjured" items degrade in quality twice as fast as normal items when the expiration date has passed but is never negative', function () {
+    it('"Conjured Mana Cake" items degrade in quality twice as fast as normal items when the expiration date has passed but is never negative', function () {
         const gildedRose = new GildedRose([new Item('Conjured Mana Cake', 0, 1)]);
 
         const items = gildedRose.updateQuality();

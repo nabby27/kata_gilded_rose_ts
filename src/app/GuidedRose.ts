@@ -1,10 +1,10 @@
 import { Item } from "./Item";
 
 export class GildedRose {
-    
+
     constructor(
         private items: Item[]
-    ) {}
+    ) { }
 
     updateQuality() {
         for (let i = 0; i < this.items.length; i++) {
